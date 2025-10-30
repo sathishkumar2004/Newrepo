@@ -1,0 +1,1 @@
+LOGO PLACEHOLDER - replace with logo.png in /src/assets/

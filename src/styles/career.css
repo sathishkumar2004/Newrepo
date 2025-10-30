@@ -1,0 +1,345 @@
+/* ==================== Build Career Section ==================== */
+.buildcareer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #203a93, #232b77);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* Container box */
+.buildcareer-container {
+  border-radius: 16px;
+  padding: 3rem 3rem;
+  max-width: 850px;
+  width: 100%;
+}
+
+/* Heading */
+.buildcareer-container h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+/* Paragraph */
+.buildcareer-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* ==================== Responsive ==================== */
+
+/* ✅ Tablet */
+@media (max-width: 1024px) {
+  .buildcareer-container {
+    padding: 2.5rem 2rem;
+  }
+
+  .buildcareer-container h2 {
+    font-size: 2rem;
+  }
+
+  .buildcareer-container p {
+    font-size: 1rem;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 600px) {
+  .buildcareer-section {
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+
+  .buildcareer-container {
+    padding: 2rem 1.2rem;
+    border-radius: 12px;
+  }
+
+  .buildcareer-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .buildcareer-container p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ==================== Work With Us Section ==================== */
+.work-section {
+  padding: 4rem 2rem;
+  background-color: rgb(217, 217, 245);
+  text-align: center;
+}
+
+/* Heading & Paragraph */
+.section-heading {
+  font-size: 2.4rem;
+  color: #0d427b;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.section-subtext {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.7;
+}
+
+/* ====== Grid Layout ====== */
+.work-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work-card {
+  background: #fff;
+  border: 3px solid blueviolet;
+  border-radius: 12px;
+  width: 350px;
+  height: 230px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(58, 58, 58, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(58, 58, 58, 0.3);
+}
+
+.emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.work-card h3 {
+  color: #0d427b;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.work-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Floating animation for emoji */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.emoji {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .work-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-subtext {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-section {
+    padding: 3rem 1rem;
+  }
+
+  .work-card {
+    padding: 1.5rem;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+}
+
+
+/* ==================== Career Openings ==================== */
+.career-openings-section {
+  text-align: center;
+  background-color: #f8fafc;
+  padding: 4rem 2rem;
+}
+
+.career-openings-header h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.career-openings-header p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.career-openings-card {
+  background: #fff;
+  padding: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.career-openings-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.career-openings-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.8rem;
+}
+
+.career-openings-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.career-openings-btn {
+  background: linear-gradient(90deg, #5b2cff, #9c27b0);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.career-openings-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #673ab7, #512da8);
+}
+
+/* ==================== Career Culture ==================== */
+
+.career-culture-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 8rem;
+  gap: 3rem;
+  background-color: #fff;
+}
+
+.career-culture-content {
+  flex: 1;
+}
+
+.career-culture-content h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.career-culture-content p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.career-culture-btn {
+  background: none;
+  border: 2px solid #0d427b;
+  color: #0d427b;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.career-culture-btn:hover {
+  background: #0d427b;
+  color: #fff;
+}
+
+.career-culture-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.career-culture-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+  .career-culture-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .career-culture-image {
+    margin-top: 2rem;
+  }
+
+  .career-openings-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .career-culture-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .career-culture-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .career-openings-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .career-openings-card {
+    padding: 2rem 1.2rem;
+  }
+
+  .career-openings-btn {
+    width: 100%;
+  }
+}
