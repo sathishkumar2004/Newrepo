@@ -28,7 +28,7 @@ const Aboutus = forwardRef((props, ref) => {
             About <span className="highlight">Us</span>
           </h2>
           <p>
-            At <strong>Burj Tech Consultancy Pvt Ltd</strong>, we specialize in
+            At <strong>ABC Consultancy Pvt Ltd</strong>, we specialize in
             innovative technology solutions that help businesses grow,
             transform, and stay ahead of the curve.
           </p>

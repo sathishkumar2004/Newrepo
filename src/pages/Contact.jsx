@@ -1,9 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/contact.css";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    fullname: "",
+    company: "",
+    email: "",
+    countryCode: "+91",
+    phone: "",
+    project: "",
+  });
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -13,18 +22,19 @@ export default function Contact() {
     });
   }, []);
 
-  // 🧠 Replace your old handleSubmit with this one
+  // ✅ Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // ✅ Submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Collect form data
-    const formData = {
-      fullname: e.target.fullname.value,
-      company: e.target.company.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-      project: e.target.project.value,
-    };
+    // Combine country code with phone number
+    const completePhone = `${formData.countryCode} ${formData.phone}`;
+    const payload = { ...formData, phone: completePhone };
 
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
@@ -32,14 +42,21 @@ export default function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         alert("✅ Your message has been sent successfully!");
-        e.target.reset();
+        setFormData({
+          fullname: "",
+          company: "",
+          email: "",
+          countryCode: "+91",
+          phone: "",
+          project: "",
+        });
       } else {
         alert("❌ Failed to send message: " + data.message);
       }
@@ -58,36 +75,36 @@ export default function Contact() {
         </div>
 
         <div className="contact-container" data-aos="fade-up">
+          {/* Left Side */}
           <div className="contact-left" data-aos="fade-up" data-aos-delay="100">
             <div className="contact-card">
               <span className="emoji">✉️</span>
               <h3>Email Us</h3>
-              <p>burjtechconsultancy@gmail.com</p>
+              <p>abcconsultancy@gmail.com</p>
             </div>
 
             <div className="contact-card">
               <span className="emoji">📱</span>
               <h3>Call Us</h3>
-              <p>+91 94443 96625</p>
+              <p>+91 1234567891</p>
             </div>
 
             <div className="contact-card">
               <span className="emoji">📍</span>
               <h3>Visit Us</h3>
               <p>
-                No.469 Pavalamalli St, Extn.
+                No. 123 Abc Street
                 <br />
-                Narasimhapuram, Kakkalur
+                1st Cross St, KK Nagar
                 <br />
-                Tiruvallur - 602 003
+                Chennai - 601 002
               </p>
             </div>
           </div>
 
-          {/* ---------- Right Form Section ---------- */}
+          {/* Right Side Form */}
           <div className="contact-right" data-aos="fade-up" data-aos-delay="200">
             <div className="contact-form">
-              {/* 👇 This form uses the new handleSubmit */}
               <form onSubmit={handleSubmit}>
                 {/* Row 1 */}
                 <div className="form-row">
@@ -95,17 +112,24 @@ export default function Contact() {
                     <label htmlFor="fullname">Full Name *</label>
                     <input
                       id="fullname"
+                      name="fullname"
                       type="text"
                       placeholder="Enter your full name"
+                      value={formData.fullname}
+                      onChange={handleChange}
                       required
                     />
                   </div>
+
                   <div className="form-group">
                     <label htmlFor="company">Company Name *</label>
                     <input
                       id="company"
+                      name="company"
                       type="text"
                       placeholder="Enter your company name"
+                      value={formData.company}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -117,19 +141,39 @@ export default function Contact() {
                     <label htmlFor="email">Email *</label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="Enter your email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                   </div>
+
                   <div className="form-group">
                     <label htmlFor="phone">Phone Number *</label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      required
-                    />
+                    <div className="phone-input">
+                      <select
+                        name="countryCode"
+                        value={formData.countryCode}
+                        onChange={handleChange}
+                      >
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+971">🇦🇪 +971</option>
+                      </select>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -138,13 +182,16 @@ export default function Contact() {
                   <label htmlFor="project">Describe Your Project *</label>
                   <textarea
                     id="project"
+                    name="project"
                     rows="5"
                     placeholder="Tell us a little about your project..."
+                    value={formData.project}
+                    onChange={handleChange}
                     required
                   ></textarea>
                 </div>
 
-                {/* Submit Button */}
+                {/* Button */}
                 <button type="submit" className="send-btn">
                   Send Message <span className="arrow">➤</span>
                 </button>

@@ -73,7 +73,7 @@
 
 .about-us {
   width: 0 auto;
-  padding: 0;
+  padding: 2rem 4rem;
   margin: 0;
   background-color: red;
   color: #fff;
@@ -87,7 +87,7 @@
 
 .about-us p {
   font-size: 1.2rem;
-  max-width: 800px;
+  max-width: 400px;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -153,10 +153,35 @@
 
   .about-image img {
     max-width: 100%;
-    height: 370px;
+    height: 300px;
     margin-bottom: 0px;
   }
 
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    gap:0;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    height: 250px;
+    margin-bottom: 0px;
+  }
+
+  .about-content{
+    padding: 0.5;
+  }
   .about-content h2 {
     font-size: 2rem;
   }
@@ -276,7 +301,7 @@ html {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 10rem;
+  gap: 5rem;
 }
 
 .process-heading {
@@ -346,8 +371,9 @@ html {
 @media (max-width: 900px) {
   .process-container {
     flex-direction: column;
-    gap: 2rem;
-    margin: 2rem 2rem;
+    gap: 0.5rem;
+    margin: 0.5rem;
+
   }
 
   .process-heading {
@@ -361,6 +387,8 @@ html {
 
   .step-card {
     gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
   }
 
   .step-icon {
@@ -530,9 +558,10 @@ html {
     grid-template-columns: 1fr;
   }
   .whyus-section{
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 }
+
 
 
 /* =============================================== Industries Section ================================================================= */
@@ -1167,6 +1196,7 @@ html {
 
 /*============================================== ContactForHome================================================================== */
 /* 🌐 Contact Page Layout */
+
 .contact-page {
   display: flex;
   justify-content: center;
@@ -1352,7 +1382,7 @@ html {
 /* Small Devices (below 600px) */
 @media (max-width: 600px) {
   .contact-page {
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
     gap: 2rem;
   }
 
@@ -1374,9 +1404,18 @@ html {
     width: 30px;
     height: 30px;
   }
+  .contact-form {
+    width: 100%;
+    margin: 0;
+  }
+  .contact-form-section{
+    padding: 0;
+    margin: 0;
+
+  }
 
   .send-btn {
     font-size: 0.9rem;
-    padding: 0.8rem 1.2rem;
+    padding: 0rem
   }
 }

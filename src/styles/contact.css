@@ -34,7 +34,7 @@
   font-size: 1.1rem;
 }
 
-/* ===== Layout (Stacked) ===== */
+/* ===== Layout ===== */
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -91,16 +91,6 @@
   flex-wrap: wrap;
 }
 
-/* Row 1: Full Name + Company Name */
-.form-row.row-1 .form-group {
-  flex: 1 1 calc(50% - 0.5rem);
-}
-
-/* Row 2: Email + Phone */
-.form-row.row-2 .form-group {
-  flex: 1 1 calc(50% - 0.5rem);
-}
-
 /* Description box */
 .form-group textarea {
   resize: none;
@@ -121,18 +111,51 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
   font-size: 1rem;
-  transition: border 0.3s ease;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   border-color: #0d427b;
+  box-shadow: 0 0 6px rgba(13, 66, 123, 0.2);
+}
+
+/* ===== Country Code + Phone Styling ===== */
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phone-input select {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.phone-input select:hover {
+  background: #eef3ff;
+}
+
+.phone-input select:focus {
+  border-color: #0d427b;
+  box-shadow: 0 0 6px rgba(13, 66, 123, 0.2);
+}
+
+.phone-input input {
+  flex: 1;
 }
 
 /* ===== Button ===== */
@@ -140,6 +163,7 @@ textarea:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  background: linear-gradient(90deg, #0d427b, #1a73e8);
   color: #fff;
   font-weight: 600;
   padding: 0.9rem 1.4rem;
@@ -148,7 +172,6 @@ textarea:focus {
   cursor: pointer;
   transition: all 0.25s ease;
   font-size: 1rem;
-  width: auto;
 }
 
 .send-btn .arrow {
@@ -157,7 +180,8 @@ textarea:focus {
 }
 
 .send-btn:hover {
-  background: #1a73e8;
+  background: linear-gradient(90deg, #1a73e8, #0d427b);
+  box-shadow: 0 6px 18px rgba(13, 66, 123, 0.3);
   transform: translateY(-3px);
 }
 
@@ -167,7 +191,7 @@ textarea:focus {
 
 /* ==================== RESPONSIVE ==================== */
 
-/* ✅ Tablet (max-width: x) */
+/* ✅ Tablet (max-width: 900px) */
 @media (max-width: 900px) {
   .contact-section {
     padding: 2.5rem 4rem;
@@ -219,9 +243,6 @@ textarea:focus {
   .contact-header h2 {
     font-size: 1.4rem;
   }
-  .contact-header h3 {
-    font-size: 1rem;
-  }
 
   .contact-header p {
     font-size: 0.9rem;
@@ -244,6 +265,20 @@ textarea:focus {
 
   .form-group {
     margin-bottom: 1rem;
+  }
+
+  .phone-input {
+    flex-direction: row;
+    gap: 0.4rem;
+  }
+
+  .phone-input select {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .phone-input input {
+    font-size: 0.9rem;
   }
 
   input,

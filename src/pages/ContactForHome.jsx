@@ -53,20 +53,20 @@ export default function ContactForHome() {
         <div className="info-item">
           <span className="home-contact-emoji">📍</span>
           <p>
-            No.469 Pavalamalli St, Extn.<br />
-            Narasimhapuram, Kakkalur<br />
-            Tiruvallur - 602 003
+            No.469 Abc St, Extn.<br />
+            1st cross Street, RkNagar<br />
+            Chennai - 602 001
           </p>
         </div>
 
         <div className="info-item">
           <span className="home-contact-emoji">📱</span>
-          <p>+91 94443 96625</p>
+          <p>+91 1234567891</p>
         </div>
 
         <div className="info-item">
           <span className="home-contact-emoji">✉️</span>
-          <p>burjtechconsultancy@gmail.com</p>
+          <p>abcconsultancy@gmail.com</p>
         </div>
 
         {/* Social Media Links */}

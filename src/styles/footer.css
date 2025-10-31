@@ -117,9 +117,39 @@
   .footer-content {
     flex-direction: column;
   }
+  .footer-section h4,
+  .footer-news h4 {
+    font-size: 1.1rem; /* smaller heading */
+  }
+
+  .footer-logo p,
+  .footer-section p,
+  .footer-news p {
+    font-size: 0.9rem; /* smaller paragraph */
+  }
 
   .footer-bottom {
-    flex-direction: column;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-section h4,
+  .footer-news h4 {
+    font-size: 0.9rem; /* smaller heading */
+  }
+
+  .footer-logo p,
+  .footer-section p,
+  .footer-news p {
+    font-size: 0.8rem; /* smaller paragraph */
+  }
+  .footer {
+    margin: 1rem 0;
+    padding: 1.5rem 2rem;
+  }
+   .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

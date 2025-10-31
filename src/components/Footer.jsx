@@ -5,6 +5,7 @@ import Instagram from "../assets/Socialmedia/instagram.png";
 import LinkedIn from "../assets/Socialmedia/linkedin.png";
 import Twitter from "../assets/Socialmedia/twitter.png";
 import Whatsapp from "../assets/Socialmedia/whatsapp.png";
+import footerlogo from "../assets/aboutus.jpeg"
 
 export default function Footer() {
   return (
@@ -12,11 +13,11 @@ export default function Footer() {
       <div className="footer-content">
         {/* Company Info */}
         <div className="footer-logo">
-          <img src={''} alt="BTC Logo" />
+          <img src={footerlogo} alt="ABC Logo" />
           <p>
-            BURJ Tech Consultancy (OPC) Pvt Ltd <br />
-            No. 469 Pavalamalli St, Extn. Narasimhapuram, <br />
-            Kakkalur, Thiruvallur - 602003, Tamil Nadu, India
+            ABC Tech Consultancy (OPC) Pvt Ltd <br />
+            No. 123 Kanchipuram St, Extn. Kanchipuram, <br />
+            Kanchipuram - 631601, Tamil Nadu, India
           </p>
         </div>
 
@@ -35,11 +36,11 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="footer-section">
           <h4>For Business</h4>
-          <p>📞 +91-9444369625</p>
-          <p>📧 burjtechconsultancy@gmail.com</p>
+          <p>📞 +91-1234567891</p>
+          <p>📧 abc@gmail.com</p>
           <h4>For Careers</h4>
-          <p>📞 +91-9444369625</p>
-          <p>📧 support@btcglobal.info</p>
+          <p>📞 +91-1234567891</p>
+          <p>📧 support@acbglobal.info</p>
         </div>
 
         {/* Newsletter */}
@@ -55,7 +56,7 @@ export default function Footer() {
 
       {/* Footer Bottom with Icons */}
       <div className="footer-bottom">
-        <p>© 2025 - BTC Pvt Ltd</p>
+        <p>© 2025 - ABC Pvt Ltd</p>
         <div className="footer-social">
           <a
             href="https://instagram.com"

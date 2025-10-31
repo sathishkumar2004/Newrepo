@@ -11,7 +11,7 @@ import About from "./pages/About/About.jsx";
 
 export default function App() {
   return (
-    <div className="root">
+    <div className="app-root">
       <ScrollToTop />
       <Navbar />
       <main style={{ minHeight: "60vh" }}>
