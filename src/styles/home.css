@@ -193,98 +193,175 @@
 
 
 /* ============================================================= Services Section =============================================== */
+/* =============================================================
+   SERVICES SECTION
+   ============================================================= */
 
-
+/* ==================== Boxes Section ==================== */
 .boxes-section {
   padding: 4rem 2rem;
-  color: white;
   text-align: center;
   background-color: whitesmoke;
 }
 
+/* Section Heading */
 .section-heading {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color:white;
+  color: rgb(64, 77, 255);
+  font-weight: 700;
 }
+
+/* ==================== Boxes Container ==================== */
 .boxes-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch; /* ✅ allows natural height growth */
   gap: 2rem;
   max-width: 1200px;
   margin: 3rem auto;
 }
 
+/* ==================== Individual Box ==================== */
 .box-card {
-  background: rgba(255, 255, 255, 0.1); /* slightly visible */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* soft border */
-  padding: 2rem;
+  background: white;
+  border: 4px solid rgb(64, 77, 255);
   border-radius: 12px;
-  width: 370px;
-  height: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 4px rgb(64, 77, 255) solid;
-  box-shadow: 0 5px 15px rgba(58, 58, 58, 0.4);
+  width: 360px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(58, 58, 58, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* ✅ allows box to grow naturally with text */
+  height: auto;
+  min-height: 220px;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+
+  /* Smooth transitions */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.box-card img {
-  width: 60px;
-  height: 60px;
+
+/* Hover effect */
+.box-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(58, 58, 58, 0.3);
+}
+
+/* ==================== Box Contents ==================== */
+.box-card img,
+.service-icon {
+  width: 80px;
+  height: 80px;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
+  animation: float 2.5s ease-in-out infinite;
 }
 
 .box-card h1 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: black; /* white text */
+  color: black;
 }
 
 .box-card p {
   font-size: 0.9rem;
-  line-height: 1.5;
-  color: black; /* white text */
+  line-height: 1.6;
+  color: black;
 }
 
-/* Fade animation for scroll-in */
-.fade-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease-out;
-}
-
-.fade-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Floating animation for service icons */  
+/* ==================== Floating Animation ==================== */
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0); }
 }
 
-.service-icon {
-  width: 80px;
-  height: 80px;
-  animation: float 2.5s ease-in-out infinite;
+/* ==================== Responsive Design ==================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .boxes-container {
+    gap: 1.5rem;
+  }
+
+  .box-card {
+    width: 45%;
+    padding: 1.5rem;
+  }
+
+  .box-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .box-card h1 {
+    font-size: 1.1rem;
+  }
+
+  .box-card p {
+    font-size: 0.9rem;
+  }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* Mobile Devices */
+@media (max-width: 768px) {
   .boxes-container {
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+  }
+
+  .box-card {
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .box-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .box-card h1 {
+    font-size: 1rem;
+  }
+
+  .box-card p {
+    font-size: 0.85rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+}
+
+/* Very Small Screens (under 480px) */
+@media (max-width: 480px) {
+  .boxes-section {
+    padding: 3rem 1rem;
   }
 
   .box-card {
     width: 100%;
+    padding: 1rem;
+  }
+
+  .box-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .box-card h1 {
+    font-size: 0.95rem;
+  }
+
+  .box-card p {
+    font-size: 0.8rem;
   }
 }
 
@@ -1193,7 +1270,6 @@ html {
 
 /* =============================================== HOME CONTACT PAGE ===================================================== */
 
-
 .home-contact-page {
   background: linear-gradient(135deg, #eaf1ff, #f9fbff);
   padding: 100px 0;
@@ -1229,6 +1305,7 @@ html {
   width: 90%;
   max-width: 1300px;
   gap: 60px;
+  flex-wrap: wrap;
 }
 
 /* ---------- Left Info Box ---------- */
@@ -1241,13 +1318,17 @@ html {
 
 .home-contact-info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* allow text to wrap properly */
   gap: 15px;
   background: #fff;
   padding: 22px 25px;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  flex-wrap: wrap; /* ensures wrapping on small screens */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  height: auto; /* allows box to grow */
 }
 
 .home-contact-info-item img.home-contact-icon {
@@ -1258,6 +1339,7 @@ html {
 }
 
 .home-contact-info-item-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1274,6 +1356,8 @@ html {
   font-size: 0.95rem;
   color: #333;
   line-height: 1.5;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* ---------- Social Icons ---------- */
@@ -1301,6 +1385,8 @@ html {
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   min-height: 600px;
+  width: 100%;
+  height: auto;
 }
 
 .home-contact-form {
@@ -1398,6 +1484,8 @@ html {
   }
 
   .home-contact-info-item {
+    flex-direction: row;
+    align-items: flex-start;
     padding: 15px;
   }
 
@@ -1409,6 +1497,10 @@ html {
   .home-contact-form-group input,
   .home-contact-form-group textarea {
     width: 100%;
+  }
+
+  .home-contact-info-item-content {
+    flex: 1;
   }
 }
 
