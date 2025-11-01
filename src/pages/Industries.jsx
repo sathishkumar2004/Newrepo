@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 export default function Industries() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 200,
       easing: "ease-in-out",
       once: false,
       mirror: true,
@@ -117,7 +117,6 @@ export default function Industries() {
           className="col image-col"
           key={activeItem.emoji}
           data-aos="fade-up"
-          data-aos-delay="200"
         >
           <div className="emoji-display">{activeItem.emoji}</div>
         </div>
@@ -127,7 +126,6 @@ export default function Industries() {
           className="col boxes-col"
           key={activeItem.title}
           data-aos="fade-up"
-          data-aos-delay="300"
         >
           <div className="col3-heading">
             <h1>{activeItem.rightTitle}</h1>

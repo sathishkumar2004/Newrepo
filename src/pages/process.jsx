@@ -13,7 +13,7 @@ import "aos/dist/aos.css";
 export default function OurProcess() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 500,
       easing: "ease-in-out",
       once: false,
       mirror: true,
@@ -42,7 +42,7 @@ export default function OurProcess() {
               className="step-card"
               key={index}
               data-aos="fade-up"
-              data-aos-delay={index * 100}
+              data-aos-delay={index * 50}
             >
               <img src={step.icon} alt={step.title} className="step-icon" />
               <div className="step-content">

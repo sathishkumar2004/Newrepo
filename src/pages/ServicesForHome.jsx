@@ -15,7 +15,7 @@ import CloudIcon from "../assets/cloud.svg";
 const ServicesForHome = forwardRef((props, ref) => {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 500,
       easing: "ease-in-out",
       once: false,
       mirror: true,
@@ -33,17 +33,15 @@ const ServicesForHome = forwardRef((props, ref) => {
 
   return (
     <section id="services" ref={ref} className="boxes-section">
-      <h2 className="section-heading" data-aos="fade-up" data-aos-delay="100">
+      <h2 className="section-heading" data-aos="fade-up" data-aos-delay="100" style={{'color': 'rgb(64, 77, 255) '}}>
         Our Services
       </h2>
 
-      <div className="boxes-container">
+      <div className="boxes-container"  data-aos="zoom-in-up" data-aos-delay="100">
         {services.map((service, index) => (
           <div
             className="box-card"
             key={index}
-            data-aos="fade-up"
-            data-aos-delay={100 * (index + 1)}
           >
             <img src={service.icon} alt={service.title} className="service-icon" />
             <h1>{service.title}</h1>

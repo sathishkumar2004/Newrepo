@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/footer.css";
+import { Link } from "react-router-dom";
+
 
 import Instagram from "../assets/Socialmedia/instagram.png";
 import LinkedIn from "../assets/Socialmedia/linkedin.png";
@@ -25,10 +27,16 @@ export default function Footer() {
         <div className="footer-section">
           <h4>Overview</h4>
           <ul>
-            <li>Terms & Conditions</li>
+            <li>
+              <Link to="/terms-and-conditions">Terms & Conditions</Link>
+            </li>
             <li>Privacy Policy</li>
-            <li>Contact Us</li>
-            <li>Careers</li>
+            <li>
+              <Link to="/contact">contact Us</Link>
+            </li>
+            <li>
+              <Link to="/Careers">Careers</Link>
+            </li>
             <li>Blog</li>
           </ul>
         </div>

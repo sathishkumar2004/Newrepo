@@ -8,6 +8,7 @@ import Industries from './Industries'
 import TechWeUse from './TechWeUse'
 import FAQ from './FAQ'
 import ContactForHome from './ContactForHome'
+import Terms from "./Terms";
 
 
 export default function Home() {

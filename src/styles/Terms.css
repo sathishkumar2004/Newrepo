@@ -1,0 +1,270 @@
+/* 🌐 Page Wrapper */
+.terms-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8rem 1rem 3rem; /* ✅ Added top padding instead of margin */
+  animation: fadeIn 0.8s ease-in-out;
+  overflow-x: hidden; /* ✅ Prevents horizontal overflow */
+}
+
+/* 🧾 Main Container */
+.terms-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 1100px;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+  color: #111827;
+  transition: transform 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.terms-container:hover {
+  transform: translateY(-3px);
+}
+
+/* 🏷️ Title */
+.terms-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+/* 🕒 Last Updated */
+.updated {
+  text-align: center;
+  color: #2563eb;
+  font-size: 0.95rem;
+  background: rgba(59, 130, 246, 0.1);
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  margin: 0 auto 2rem;
+  display: block;
+  width: fit-content;
+  font-weight: 500;
+}
+
+/* 🌈 Section Headings */
+.terms-container h2 {
+  font-size: 1.15rem;
+  color: #111827;
+  background: linear-gradient(90deg, #e2e8f0, #f1f5f9);
+  padding: 0.8rem 1rem;
+  border-radius: 8px 8px 0 0;
+  margin-top: 2rem;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.terms-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+  border-radius: 0 0 8px 8px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.terms-container h2:hover {
+  background: linear-gradient(90deg, #dbeafe, #e0f2fe);
+  transform: translateX(5px);
+}
+
+.terms-container h2:hover::after {
+  height: 4px;
+  opacity: 1;
+}
+
+/* 📄 Paragraphs */
+.terms-container p {
+  color: #374151;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.terms-container p:hover {
+  color: #111827;
+}
+
+/* 📋 Lists */
+.terms-container ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.terms-container li {
+  color: #374151;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 🔗 Links */
+.terms-container a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.terms-container a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.terms-container a:hover::after {
+  width: 100%;
+}
+
+/* 📍 Contact Information Section */
+.contact-highlight {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  color: #111827;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 25px rgba(37, 99, 235, 0.15);
+  transition: all 0.4s ease;
+}
+
+.contact-highlight h2 {
+  background: none;
+  color: #111827;
+  padding: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.contact-highlight p {
+  color: #1f2937;
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* 🏢 Address Box */
+.address-box {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+.address-box:hover {
+  background: rgba(37, 99, 235, 0.15);
+  transform: scale(1.03);
+}
+
+.contact-highlight:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.2);
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* 📱 Responsive Styles */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .terms-container {
+    padding: 2rem;
+    max-width: 95%;
+  }
+
+  .terms-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .terms-container h2 {
+    font-size: 1rem;
+  }
+
+  .terms-container p,
+  .terms-container li {
+    font-size: 0.9rem;
+  }
+
+  .updated {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-page {
+    padding: 6rem 0.8rem 2rem; 
+  }
+
+  .terms-container {
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .terms-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .terms-container h2 {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .terms-container p,
+  .terms-container li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .contact-highlight {
+    padding: 1rem 1.2rem;
+  }
+
+  .updated {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .address-box {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
