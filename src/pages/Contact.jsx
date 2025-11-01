@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../styles/contact.css";
+import "../styles/contact.css"; // 👈 make sure you link the new CSS file
 
-export default function Contact() {
+// ✅ PNG imports
+import AddressIcon from "../assets/Socialmedia/gps.png";
+import PhoneIcon from "../assets/Socialmedia/phone-call.png";
+import EmailIcon from "../assets/Socialmedia/email.png";
+
+export default function ContactForHome() {
   const [formData, setFormData] = useState({
     fullname: "",
     company: "",
     email: "",
-    countryCode: "+91",
     phone: "",
     project: "",
   });
@@ -31,29 +35,20 @@ export default function Contact() {
   // ✅ Submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Combine country code with phone number
-    const completePhone = `${formData.countryCode} ${formData.phone}`;
-    const payload = { ...formData, phone: completePhone };
-
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
-
       if (response.ok) {
         alert("✅ Your message has been sent successfully!");
         setFormData({
           fullname: "",
           company: "",
           email: "",
-          countryCode: "+91",
           phone: "",
           project: "",
         });
@@ -67,136 +62,128 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact-section">
-      <div className="contact-wrapper" data-aos="fade-up">
-        <div className="contact-header" data-aos="fade-up">
-          <h2>📞 Contact Us</h2>
+    <section className="contacthome-section">
+      <div className="contacthome-container" data-aos="fade-up">
+        {/* Header */}
+        <div className="contacthome-header">
+          <h2>Contact Us</h2>
           <p>We’d love to collaborate — tell us about your project idea!</p>
         </div>
 
-        <div className="contact-container" data-aos="fade-up">
-          {/* Left Side */}
-          <div className="contact-left" data-aos="fade-up" data-aos-delay="100">
-            <div className="contact-card">
-              <span className="emoji">✉️</span>
-              <h3>Email Us</h3>
-              <p>abcconsultancy@gmail.com</p>
+        <div className="contacthome-content">
+          {/* Left Side - Contact Info */}
+          <div className="contacthome-left" data-aos="fade-right">
+            <div className="contacthome-info">
+              <img
+                src={AddressIcon}
+                alt="Address"
+                className="contacthome-icon"
+              />
+              <div>
+                <h3>Address</h3>
+                <p>
+                  No.469 Pavalamalli St, Extn.
+                  <br />
+                  Narasimhapuram, Kakkalur
+                  <br />
+                  Tiruvallur - 602 003
+                </p>
+              </div>
             </div>
 
-            <div className="contact-card">
-              <span className="emoji">📱</span>
-              <h3>Call Us</h3>
-              <p>+91 1234567891</p>
+            <div className="contacthome-info">
+              <img src={PhoneIcon} alt="Phone" className="contacthome-icon" />
+              <div>
+                <h3>Phone</h3>
+                <p>+91 9444369625</p>
+              </div>
             </div>
 
-            <div className="contact-card">
-              <span className="emoji">📍</span>
-              <h3>Visit Us</h3>
-              <p>
-                No. 123 Abc Street
-                <br />
-                1st Cross St, KK Nagar
-                <br />
-                Chennai - 601 002
-              </p>
+            <div className="contacthome-info">
+              <img src={EmailIcon} alt="Email" className="contacthome-icon" />
+              <div>
+                <h3>Email</h3>
+                <p>burjtechconsultancy@gmail.com</p>
+              </div>
             </div>
           </div>
 
-          {/* Right Side Form */}
-          <div className="contact-right" data-aos="fade-up" data-aos-delay="200">
-            <div className="contact-form">
-              <form onSubmit={handleSubmit}>
-                {/* Row 1 */}
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="fullname">Full Name *</label>
-                    <input
-                      id="fullname"
-                      name="fullname"
-                      type="text"
-                      placeholder="Enter your full name"
-                      value={formData.fullname}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="company">Company Name *</label>
-                    <input
-                      id="company"
-                      name="company"
-                      type="text"
-                      placeholder="Enter your company name"
-                      value={formData.company}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-
-                {/* Row 2 */}
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="email">Email *</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Enter your email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number *</label>
-                    <div className="phone-input">
-                      <select
-                        name="countryCode"
-                        value={formData.countryCode}
-                        onChange={handleChange}
-                      >
-                        <option value="+91">🇮🇳 +91</option>
-                        <option value="+1">🇺🇸 +1</option>
-                        <option value="+44">🇬🇧 +44</option>
-                        <option value="+61">🇦🇺 +61</option>
-                        <option value="+971">🇦🇪 +971</option>
-                      </select>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="Enter your phone number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Row 3 */}
+          {/* Right Side - Form */}
+          <div className="contacthome-right" data-aos="fade-left">
+            <form onSubmit={handleSubmit} className="contacthome-form">
+              <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="project">Describe Your Project *</label>
-                  <textarea
-                    id="project"
-                    name="project"
-                    rows="5"
-                    placeholder="Tell us a little about your project..."
-                    value={formData.project}
+                  <label htmlFor="fullname">Full Name *</label>
+                  <input
+                    id="fullname"
+                    name="fullname"
+                    type="text"
+                    placeholder="Enter your full name"
+                    value={formData.fullname}
                     onChange={handleChange}
                     required
-                  ></textarea>
+                  />
                 </div>
 
-                {/* Button */}
-                <button type="submit" className="send-btn">
-                  Send Message <span className="arrow">➤</span>
-                </button>
-              </form>
-            </div>
+                <div className="form-group">
+                  <label htmlFor="company">Company Name *</label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    placeholder="Enter your company name"
+                    value={formData.company}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="email">Email *</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phone">Phone *</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="project">Project Description *</label>
+                <textarea
+                  id="project"
+                  name="project"
+                  rows="5"
+                  placeholder="Tell us about your project..."
+                  value={formData.project}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" className="send-btn">
+                Send Message <span className="arrow">➤</span>
+              </button>
+            </form>
           </div>
         </div>
       </div>
