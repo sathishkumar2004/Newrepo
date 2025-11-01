@@ -8,24 +8,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 6rem; /* Increased navbar height */
+  padding: 0.8rem 6rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease-in-out; /* smooth transition */
 }
 
-/* ---------- Logo ---------- */
+/* Logo */
 .navbar-left {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  width: 10rem;  /* Increased logo size */
-  height: 4.2rem;
+  width: 10rem;
+  height: 4rem;
   border-radius: 10px;
-  padding: 6px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.5s ease-in-out; /* smooth size transition */
 }
 
 .logo:hover {
@@ -33,33 +32,34 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-/* ---------- Right Side ---------- */
+/* ==================== Right Side ==================== */
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Common Style for Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0.5rem;
 }
 
-/* ---------- Nav Links ---------- */
+/* ==================== Links Unified ==================== */
 .nav-links a {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.6rem; /* Increased height */
-  border-radius: 35px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: white;
   background: transparent;
   border: 2px solid transparent;
@@ -73,16 +73,16 @@
 
 /* Special background colors */
 .nav-links a[href="/careers"] {
-  background-color: #ff3b3b; /* red */
+  background-color: #ff3b3b;
   box-shadow: 0 4px 12px rgba(255, 59, 59, 0.4);
 }
 
 .nav-links a[href="/contact"] {
-  background-color: #2ecc71; /* green */
+  background-color: #2ecc71;
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
-/* Shiny Hover Effect */
+/* Hover shine effect */
 .nav-links a::before {
   content: "";
   position: absolute;
@@ -90,12 +90,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   transition: left 0.5s ease;
 }
 
@@ -113,28 +108,23 @@
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* ---------- Hamburger Menu ---------- */
+/* ==================== Hamburger Menu ==================== */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
-  padding: 0.6rem;
+  gap: 5px;
+  padding: 10px;
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   background: transparent;
   z-index: 1100;
 }
 
-.hamburger:hover {
-  border-color: rgba(255, 255, 255, 0.8);
-  transform: scale(1.05);
-}
-
 .hamburger div {
-  width: 28px;
-  height: 3.5px;
+  width: 26px;
+  height: 3px;
   background-color: white;
   border-radius: 2px;
   transition: all 0.3s ease;
@@ -150,21 +140,22 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ---------- Mobile Menu ---------- */
+/* ==================== Mobile Menu ==================== */
 .mobile-menu {
   position: fixed;
-  top: 5.5rem; /* adjusted to match taller navbar */
+  top: 4.4rem;
   left: 0;
   width: 100%;
   background: linear-gradient(180deg, #243c5c, #0d427b);
   max-height: 0;
   overflow: hidden;
+  opacity: 0;
   transition: max-height 0.6s ease, opacity 0.4s ease;
   z-index: 1050;
-  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
 }
 
 .mobile-menu.active {
@@ -172,6 +163,7 @@
   opacity: 1;
 }
 
+/* Remove bullets */
 .mobile-menu ul,
 .mobile-menu li {
   list-style: none;
@@ -181,14 +173,13 @@
 
 /* Mobile menu links */
 .mobile-menu a {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 3.8rem; /* slightly taller for touch targets */
+  height: 3.5rem;
   padding: 1rem;
-  margin: 0.7rem 0;
+  margin: 0.6rem 0;
   border-radius: 35px;
   font-weight: 600;
   font-size: 1rem;
@@ -196,13 +187,10 @@
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.25);
   text-decoration: none;
-  cursor: pointer;
-  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 98, 255, 0.25);
   transition: all 0.4s ease;
 }
 
-/* Mobile colors */
 .mobile-menu a[href="/careers"] {
   background-color: #ff3b3b;
   box-shadow: 0 4px 12px rgba(255, 59, 59, 0.4);
@@ -213,7 +201,7 @@
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
-/* ---------- Responsive ---------- */
+/* ==================== Responsive ==================== */
 @media (max-width: 1220px) {
   .navbar-right {
     display: none;
@@ -222,26 +210,27 @@
     display: flex;
   }
   .navbar {
-    padding: 1rem 4rem;
+    padding: 0.6rem 4rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 610px) {
   .navbar {
-    padding: 1rem 1.5rem;
-  }
-  .logo {
-    width: 8rem;
-    height: 3.5rem;
+    padding: 0.4rem 1.5rem;
+    transition: all 0.5s ease-in-out;
   }
   .nav-links a,
   .mobile-menu a {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .logo {
+    width: 6.5rem;
+    height: 3.4rem;
+    padding: 0.2rem 0rem;
   }
 }
 
 /* Prevent content overlap */
 main {
-  padding-top: 110px; /* increased to match taller navbar */
+  padding-top: 90px;
 }

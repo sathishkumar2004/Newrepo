@@ -121,9 +121,47 @@
   box-shadow: 0 10px 20px rgba(58, 58, 58, 0.3);
 }
 
+/* ==================== Emoji ==================== */
 .emoji {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  animation: float 2.5s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✨ Glowing background effect */
+.emoji::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(
+    circle,
+    rgba(138, 43, 226, 0.35),
+    rgba(138, 43, 226, 0)
+  );
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(5px);
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Floating animation for emoji */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* Smooth glow pulsing */
+@keyframes pulse {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
 }
 
 .work-card h3 {
@@ -136,17 +174,6 @@
   color: #333;
   font-size: 0.95rem;
   line-height: 1.5;
-}
-
-/* Floating animation for emoji */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.emoji {
-  animation: float 2.5s ease-in-out infinite;
 }
 
 /* ==================== Responsive ==================== */
@@ -183,8 +210,12 @@
   .emoji {
     font-size: 2rem;
   }
-}
 
+  .emoji::before {
+    width: 55px;
+    height: 55px;
+  }
+}
 
 /* ==================== Career Openings ==================== */
 .career-openings-section {
