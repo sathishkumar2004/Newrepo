@@ -8,42 +8,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 3rem; /* base padding */
+  padding: 0.6rem 6rem; /* Increased navbar height */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   transition: all 0.4s ease;
 }
 
-/* Adjust padding & spacing for large screens */
-@media (min-width: 1600px) {
-  .navbar {
-    padding: 0.8rem 4rem;
-  }
-  .nav-links {
-    gap: 0.8rem; /* slightly tighter */
-  }
-}
-
-@media (min-width: 1900px) {
-  .navbar {
-    padding: 1rem 5rem;
-  }
-  .nav-links {
-    gap: 0.6rem; /* compact look */
-  }
-}
-
-/* Logo */
+/* ---------- Logo ---------- */
 .navbar-left {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  width: 8rem;
-  height: 3.5rem;
+  width: 10rem;  /* Increased logo size */
+  height: 4.2rem;
   border-radius: 10px;
-  padding: 4px;
+  padding: 6px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -52,33 +33,33 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-/* ==================== Right Side ==================== */
+/* ---------- Right Side ---------- */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.2rem; /* balanced on medium screens */
+  gap: 1.5rem;
 }
 
 /* Common Style for Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 0.8rem; /* smaller default gap */
+  gap: 1.2rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* ==================== Links ==================== */
+/* ---------- Nav Links ---------- */
 .nav-links a {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.55rem 1.1rem;
-  border-radius: 30px;
+  padding: 0.9rem 1.6rem; /* Increased height */
+  border-radius: 35px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: white;
   background: transparent;
   border: 2px solid transparent;
@@ -92,16 +73,16 @@
 
 /* Special background colors */
 .nav-links a[href="/careers"] {
-  background-color: #ff3b3b;
+  background-color: #ff3b3b; /* red */
   box-shadow: 0 4px 12px rgba(255, 59, 59, 0.4);
 }
 
 .nav-links a[href="/contact"] {
-  background-color: #2ecc71;
+  background-color: #2ecc71; /* green */
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
-/* Hover Effect */
+/* Shiny Hover Effect */
 .nav-links a::before {
   content: "";
   position: absolute;
@@ -132,12 +113,12 @@
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* ==================== Hamburger ==================== */
+/* ---------- Hamburger Menu ---------- */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  padding: 6px;
+  gap: 6px;
+  padding: 0.6rem;
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   cursor: pointer;
@@ -152,8 +133,8 @@
 }
 
 .hamburger div {
-  width: 26px;
-  height: 3px;
+  width: 28px;
+  height: 3.5px;
   background-color: white;
   border-radius: 2px;
   transition: all 0.3s ease;
@@ -169,10 +150,10 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ==================== Mobile Menu ==================== */
+/* ---------- Mobile Menu ---------- */
 .mobile-menu {
   position: fixed;
-  top: 4.8rem;
+  top: 5.5rem; /* adjusted to match taller navbar */
   left: 0;
   width: 100%;
   background: linear-gradient(180deg, #243c5c, #0d427b);
@@ -191,11 +172,23 @@
   opacity: 1;
 }
 
+.mobile-menu ul,
+.mobile-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile menu links */
 .mobile-menu a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  text-align: center;
+  height: 3.8rem; /* slightly taller for touch targets */
   padding: 1rem;
-  margin: 0.6rem 0;
+  margin: 0.7rem 0;
   border-radius: 35px;
   font-weight: 600;
   font-size: 1rem;
@@ -203,6 +196,8 @@
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.25);
   text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 98, 255, 0.25);
   transition: all 0.4s ease;
 }
@@ -218,7 +213,7 @@
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
-/* ==================== Responsive ==================== */
+/* ---------- Responsive ---------- */
 @media (max-width: 1220px) {
   .navbar-right {
     display: none;
@@ -227,21 +222,26 @@
     display: flex;
   }
   .navbar {
-    padding: 1rem 2.5rem;
+    padding: 1rem 4rem;
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  .logo {
+    width: 8rem;
+    height: 3.5rem;
   }
   .nav-links a,
   .mobile-menu a {
     font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
   }
 }
 
 /* Prevent content overlap */
 main {
-  padding-top: 90px;
+  padding-top: 110px; /* increased to match taller navbar */
 }

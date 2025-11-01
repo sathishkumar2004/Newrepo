@@ -78,13 +78,13 @@
 }
 
 .contacthome-info h3 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .contacthome-info p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   color: inherit;
 }
@@ -151,10 +151,10 @@ textarea {
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
-  align-self: flex-start;
   display: flex;
   align-items: center;
   gap: 8px;
+  align-self: flex-start;
   transition: all 0.3s ease;
 }
 
@@ -162,8 +162,9 @@ textarea {
   background: white;
   color: #0d3b66;
   border: 2px solid #0d3b66;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
 }
-
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 992px) {
   .contacthome-content {
