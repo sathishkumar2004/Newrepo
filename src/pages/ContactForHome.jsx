@@ -7,7 +7,7 @@ import LinkedinIcon from "../assets/Socialmedia/linkedin.png";
 import WhatsappIcon from "../assets/Socialmedia/whatsapp.png";
 import FacebookIcon from "../assets/Socialmedia/twitter.png";
 
-// Contact PNGs (📍, 📱, ✉️ replacements)
+// Contact PNGs
 import LocationIcon from "../assets/Socialmedia/gps.png";
 import PhoneIcon from "../assets/Socialmedia/phone-call.png";
 import EmailIcon from "../assets/Socialmedia/email.png";
@@ -47,15 +47,15 @@ export default function ContactForHome() {
 
   return (
     <section className="home-contact-page">
-      {/* === Top Row === */}
+      {/* === Header === */}
       <div className="home-contact-top">
         <h2>Get in Touch</h2>
         <p>We’d love to hear from you — let’s build something great together!</p>
       </div>
 
-      {/* === Bottom Row (Left: Info | Right: Form) === */}
+      {/* === Main Content === */}
       <div className="home-contact-bottom">
-        {/* Left - Contact Info */}
+        {/* Left Info */}
         <div className="home-contact-info">
           <div className="home-contact-info-item">
             <img src={LocationIcon} alt="Location" className="home-contact-icon" />
@@ -101,70 +101,39 @@ export default function ContactForHome() {
           </div>
         </div>
 
-        {/* Right - Contact Form */}
+        {/* Right Form */}
         <div className="home-contact-form-section">
           <form onSubmit={handleSubmit} className="home-contact-form">
             <div className="home-contact-form-row">
               <div className="home-contact-form-group">
                 <label htmlFor="fullname">Full Name *</label>
-                <input
-                  type="text"
-                  id="fullname"
-                  name="fullname"
-                  required
-                  placeholder="Enter your name"
-                />
+                <input type="text" id="fullname" name="fullname" required placeholder="Enter your name" />
               </div>
 
               <div className="home-contact-form-group">
                 <label htmlFor="company">Company</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Enter your company"
-                />
+                <input type="text" id="company" name="company" placeholder="Enter your company" />
               </div>
             </div>
 
             <div className="home-contact-form-row">
               <div className="home-contact-form-group">
                 <label htmlFor="email">Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="Enter your email"
-                />
+                <input type="email" id="email" name="email" required placeholder="Enter your email" />
               </div>
 
               <div className="home-contact-form-group">
                 <label htmlFor="phone">Phone *</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  placeholder="Enter your phone number"
-                />
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" />
               </div>
             </div>
 
             <div className="home-contact-form-group">
               <label htmlFor="project">Project Details *</label>
-              <textarea
-                id="project"
-                name="project"
-                rows="4"
-                required
-                placeholder="Enter your project details"
-              ></textarea>
+              <textarea id="project" name="project" rows="4" required placeholder="Enter your project details"></textarea>
             </div>
 
-            <button type="submit" className="home-contact-send-btn">
-              Send Message
-            </button>
+            <button type="submit" className="home-contact-send-btn">Send Message</button>
           </form>
         </div>
       </div>
