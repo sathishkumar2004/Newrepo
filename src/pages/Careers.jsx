@@ -1,5 +1,5 @@
 import React from "react";
-import BuildCareer from "../careerpages/buildCareer";
+import BuildCareer from "../careerpages/buildcareer";
 import WorkWithUs from "../careerpages/WorkWithUs";
 import CareerOpenings from "../careerpages/CareerOpenings";
 import CareerCulture from "../careerpages/CareerCulture";
