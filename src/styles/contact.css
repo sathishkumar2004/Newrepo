@@ -1,32 +1,58 @@
 /* ==================== CONTACT HOME SECTION ==================== */
 .contacthome-section {
-  background: linear-gradient(135deg, #f0f7ff, #e8efff);
-  padding: 80px 20px;
+  background: white;
+  margin-top: 4rem;
+  padding: 5rem 3rem;
   display: flex;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* ✅ Clean Container Background and Styling */
 .contacthome-container {
   max-width: 1200px;
   width: 100%;
-  padding: 0 20px;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
+/* ==================== CONTACT HOME HEADER ==================== */
 .contacthome-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
 }
 
 .contacthome-header h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #0d3b66;
-  margin-bottom: 10px;
+  line-height: 1.2;
+  margin: 3px; /* ✅ no space above or below */
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.contacthome-header h3 {
+  font-size: 2.5rem;
+  font-weight: 650;
+  color: #0d3b66;
+  margin:0;/* ✅ removes gap between h2 and h3 */
+  line-height: 1.2;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .contacthome-header p {
-  font-size: 1rem;
-  color: #333;
+  padding: 1rem 0rem;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* ==================== LAYOUT ==================== */
@@ -47,6 +73,7 @@
 .contacthome-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background: white;
@@ -55,6 +82,13 @@
   transition: all 0.4s ease;
   border: 1.5px solid #c7d6ee;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+  flex-basis: 0;
+
+  /* ✅ Prevent text overlap and force wrapping */
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .contacthome-info:hover {
@@ -81,18 +115,26 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 6px;
+  text-align: center;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contacthome-info p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(99, 99, 99, 0.908);
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* ==================== RIGHT SIDE - CONTACT FORM ==================== */
 .contacthome-right {
   background: white;
-  padding: 50px 45px;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
@@ -165,17 +207,28 @@ textarea {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
 }
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 992px) {
   .contacthome-content {
     grid-template-columns: 1fr;
     gap: 30px;
+    width: 100%;
+  }
+
+  .contacthome-header h2,.contacthome-header h3 {
+    font-size: 2rem;
+  }
+
+  .contacthome-header p {
+    font-size: 1rem;
+    max-width: 600px;
   }
 
   .contacthome-left,
   .contacthome-right {
     max-width: 600px;
-    margin: 0 auto; /* center both blocks */
+    margin: 0 auto;
     width: 100%;
   }
 
@@ -204,11 +257,16 @@ textarea {
 
 @media (max-width: 600px) {
   .contacthome-section {
-    padding: 50px 10px;
+    padding: 0;
   }
 
   .contacthome-container {
-    padding: 0 10px;
+    padding: 25px 15px;
+  }
+
+  .contacthome-header {
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
   }
 
   .contacthome-right {
@@ -219,9 +277,37 @@ textarea {
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
+    flex-grow: 1;
+    flex-basis: auto;
+    padding: 18px 10px;
+    min-height: auto;
+    overflow: hidden;
   }
+
+  .contacthome-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .contacthome-info h3 {
+    font-size: 1.2rem;
+    margin: 6px 0;
+  }
+
+  .contacthome-info p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
   input,
-textarea {
-  font-size: 0.8rem;
-}
+  textarea {
+    font-size: 0.85rem;
+  }
+
+  .send-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

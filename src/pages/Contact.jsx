@@ -66,8 +66,9 @@ export default function ContactForHome() {
       <div className="contacthome-container" data-aos="fade-up">
         {/* Header */}
         <div className="contacthome-header">
-          <h2>Contact Us</h2>
-          <p>We’d love to collaborate — tell us about your project idea!</p>
+          <h2>Get in Touch With</h2>
+          <h3> ABC Tech Consultancy Pvt Ltd</h3>
+          <p>We're here to help. Whether you have questions about our services, need support, or want to discuss potential collaborations.</p>
         </div>
 
         <div className="contacthome-content">

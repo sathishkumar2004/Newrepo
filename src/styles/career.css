@@ -54,7 +54,6 @@
 @media (max-width: 600px) {
   .buildcareer-section {
     padding: 3rem 1rem;
-    min-height: auto;
   }
 
   .buildcareer-container {
@@ -63,7 +62,7 @@
   }
 
   .buildcareer-container h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .buildcareer-container p {
@@ -125,6 +124,7 @@
 /* ==================== Emoji ==================== */
 .emoji {
   font-size: 2.5rem;
+  margin: 1rem;
   margin-bottom: 1rem;
   animation: float 2.5s ease-in-out infinite;
   position: relative;
@@ -219,7 +219,7 @@
 }
 
 /* ==================== Career Openings ==================== */
-/* ==================== Career Openings Section ==================== */
+
 .career-openings-section {
   display: flex;
   justify-content: center;
@@ -244,7 +244,7 @@
 
 .career-openings-card {
   background: #fff;
-  padding: 2.5rem;
+  padding: 2rem;
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
