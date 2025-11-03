@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/footer.css";
 import { Link } from "react-router-dom";
 
-
 import Instagram from "../assets/Socialmedia/instagram.png";
 import LinkedIn from "../assets/Socialmedia/linkedin.png";
 import Twitter from "../assets/Socialmedia/twitter.png";

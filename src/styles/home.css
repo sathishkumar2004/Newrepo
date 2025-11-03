@@ -70,23 +70,22 @@
 }
 
 /* =============== About Us Section ================= */
-
 .about-us {
-  width: 0 auto;
+  width: 100%;
   padding: 2rem 4rem;
   margin: 0;
-  background-color: red;
+  background-color: white;
   color: #fff;
   text-align: center;
 }
 
 .about-us h2 {
-  font-size: 2.5rem;
+  font-size: 5rem;
   margin-bottom: 2rem;
 }
 
 .about-us p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 400px;
   margin: 0 auto;
   line-height: 1.6;
@@ -98,10 +97,10 @@
   flex-wrap: wrap; /* responsive wrapping */
   align-items: center;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 3rem;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 2rem;/* subtle overlay */
+  padding: 4rem 2rem;
   border-radius: 12px;
 }
 
@@ -109,7 +108,7 @@
 .about-image img {
   width: 100%;
   max-width: 500px;
-  height: 400px;
+  height: 320px;
   border-radius: 12px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -126,7 +125,7 @@
 .about-content {
   flex: 1;
   color: #fff;
-  background-color: rgb(22, 17, 117); /* slightly transparent */
+  background-color: rgb(22, 17, 117);
   padding: 2rem;
   border-radius: 1rem;
 }
@@ -141,20 +140,32 @@
   line-height: 1.6;
 }
 
-/* ================== Responsive ================== */
+/* ==================== Responsive Design ==================== */
 
+/* ✅ Tablet (≤900px) */
 @media (max-width: 900px) {
+  .about-us {
+    padding: 2rem;
+  }
+
   .about-container {
     flex-direction: column;
-    text-align: center;
-    padding: 2rem 7rem;
-    gap:0;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 1.5rem;
   }
 
   .about-image img {
+    width: 25rem;
+    height: 10rem;
     max-width: 100%;
-    height: 300px;
-    margin-bottom: 0px;
+    height: auto;
+  }
+
+  .about-content {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
   }
 
   .about-content h2 {
@@ -162,42 +173,52 @@
   }
 
   .about-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
+
+/* ✅ Mobile (≤600px) */
 @media (max-width: 600px) {
+  .about-us {
+    padding: 2rem 1rem;
+  }
+
+  .about-us h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-us p {
+    font-size: 1rem;
+  }
+
   .about-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 2.5rem 1rem;
-    gap:0;
+    gap: 1rem;
+    padding: 2rem 1rem;
   }
 
   .about-image img {
+    width: 100%;
     max-width: 100%;
-    height: 250px;
-    margin-bottom: 0px;
+    height: auto;
   }
 
-  .about-content{
-    padding: 0.5;
+  .about-content {
+    padding: 1rem;
+    border-radius: 0.8rem;
   }
+
   .about-content h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .about-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
-
 
 /* ============================================================= Services Section =============================================== */
-/* =============================================================
-   SERVICES SECTION
-   ============================================================= */
 
-/* ==================== Boxes Section ==================== */
 .boxes-section {
   padding: 4rem 2rem;
   text-align: center;
@@ -242,7 +263,7 @@
   overflow: visible;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: normal;
+  white-space: normal;  
 
   /* Smooth transitions */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -259,26 +280,28 @@
 .service-icon {
   width: 80px;
   height: 80px;
-  margin-bottom: 1rem;
+  margin: 1rem;
   animation: float 2.5s ease-in-out infinite;
 }
 
 .box-card h1 {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   color: black;
 }
 
 .box-card p {
+  margin: 0;
+  margin-bottom: 1rem;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: black;
+  color: rgb(98, 98, 98);
 }
 
 /* ==================== Floating Animation ==================== */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  0% { transform: translateY(15px); }
+  50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
 
@@ -357,11 +380,11 @@
   }
 
   .box-card h1 {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .box-card p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -386,6 +409,7 @@
   top: 6rem;
   align-self: flex-start;
   font-size: 3rem;
+  font-weight: 700;
   color: rgb(0, 174, 255);
   margin-bottom: 2rem;
   z-index: 5;
@@ -406,7 +430,7 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -433,70 +457,111 @@
   margin-bottom: 0.5rem;
   margin: 0;
   color: black;
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .step-content p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.5;
-  color: #000;
+  color: #515151;
   font-weight: 300;
 }
 
-/* ✅ Responsive Fix — heading becomes normal on mobile */
+/* ==================== Responsive Design ==================== */
+
+/* ✅ Tablet (≤ 900px) */
 @media (max-width: 900px) {
+  .process-section {
+    padding: 3rem 2rem;
+  }
+
   .process-container {
     flex-direction: column;
-    gap: 0.5rem;
-    margin: 0.5rem;
-
+    gap: 2rem;
   }
 
   .process-heading {
-    position: relative; /* ✅ not sticky */
+    position: relative;
     top: auto;
     text-align: center;
-    z-index: auto;
-    background: none;
+    font-size: 2.4rem;
     padding: 0;
+    margin-bottom: 1.5rem;
   }
 
   .step-card {
-    gap: 1rem;
     flex-direction: column;
-    padding: 1rem;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.2rem;
   }
 
   .step-icon {
     width: 70px;
     height: 70px;
-    padding: 10px;
   }
 
   .step-content h3 {
     font-size: 1.3rem;
-    padding: 0.3rem 0;
+  }
+
+  .step-content p {
+    font-size: 1rem;
   }
 }
 
+/* ✅ Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .process-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .process-heading {
+    font-size: 2rem;
+  }
+
+  .step-card {
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 0.8rem;
+    text-align: start;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
 
 /* ======================================================= Why Choose Us =================================================================== */
 
+/* ==================== WHY US SECTION ==================== */
 .whyus-section {
-  padding: 5rem 10rem;
+  padding: 5rem 15rem;
   background: linear-gradient(to right, #4e4376, #2b5876);
   color: #fff;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* ===== Header ===== */
 .whyus-header {
   display: flex;
-  align-items: center; /* vertically center */
-  justify-content: center; /* horizontally center */
-  gap: 1.5rem; /* space between heading and paragraph */
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
-
 }
 
 .whyus-header h2 {
@@ -505,21 +570,22 @@
 }
 
 .whyus-header p {
-  font-size: 1rem;
-  max-width: 600px; /* optional: prevent text from being too long */
+  font-size: 1.1rem;
+  max-width: 600px;
 }
 
+/* ===== Top Boxes ===== */
 .whyus-top-boxes {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  flex-wrap: wrap;
   margin-bottom: 3rem;
 }
 
 .whyus-small-box {
-  background: rgba(255,255,255,0.1);
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
   border-radius: 12px;
   width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -528,54 +594,58 @@
 
 .whyus-small-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .whyus-small-box h3 {
-  font-size: 2rem;
-  margin: 1rem 2rem;
-  color: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+  font-size: 1.8rem;
+  margin: 1rem 0.5rem;
+  background: linear-gradient(60deg, #64b3f4, #c2e59c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .whyus-small-box p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
-/* Feature Grid */
+/* ===== Feature Grid ===== */
 .whyus-feature-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr)); 
-  gap: 0.7rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 3rem auto;
+  box-sizing: border-box;
 }
 
 .whyus-feature {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  border-radius: 10px;
 }
 
 .whyus-feature:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .feature-icon {
   font-size: 2rem;
-  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .whyus-feature h3 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
 }
+
 .whyus-feature p {
   margin-bottom: 1rem;
 }
+
 .whyus-feature ul {
   list-style: none;
   padding-left: 0;
@@ -589,14 +659,15 @@
 }
 
 .whyus-feature ul li::before {
-  content: "✅"; 
+  content: "✅";
   margin-right: 0.5rem;
 }
 
+/* ===== CTA Section ===== */
 .whyus-cta {
   margin-top: 3rem;
   padding: 3rem 2rem;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   text-align: center;
 }
@@ -626,16 +697,76 @@
   background: #005fcc;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ==================== Responsive Design ==================== */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .whyus-section {
+    padding: 4rem 2rem;
+  }
+
+  .whyus-header h2 {
+    font-size: 2.8rem;
+  }
+
+  .whyus-header p {
+    font-size: 1rem;
+  }
+
   .whyus-feature-grid {
     grid-template-columns: 1fr;
   }
-  .whyus-section{
-    padding: 1rem;
+
+  .whyus-small-box {
+    width: 260px;
   }
 }
 
+/* Mobile View */
+@media (max-width: 600px) {
+  .whyus-section {
+    padding: 2rem 1rem;
+  }
+
+  .whyus-header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .whyus-header h2 {
+    font-size: 2rem;
+  }
+
+  .whyus-header p {
+    font-size: 0.95rem;
+  }
+
+  .whyus-small-box {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .whyus-feature {
+    padding: 1.5rem;
+  }
+
+  .whyus-cta {
+    padding: 2rem 1rem;
+  }
+
+  .whyus-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .whyus-cta p {
+    font-size: 1rem;
+  }
+
+  .whyus-cta button {
+    width: 100%;
+    padding: 14px 0;
+  }
+}
 
 
 /* =============================================== Industries Section ================================================================= */
@@ -1287,7 +1418,7 @@
 
 .home-contact-top h2 {
   font-size: 2.4rem;
-  color: #0d427b;
+  color: #0d427b;              
   margin-bottom: 12px;
   font-weight: 700;
 }
@@ -1363,13 +1494,14 @@
 /* ---------- Social Icons ---------- */
 .home-contact-social {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 20px;
+  margin-top:30px;
+  margin-left: 1rem;
 }
 
 .home-contact-social a img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -1472,7 +1604,7 @@
 
 @media (max-width: 600px) {
   .home-contact-page {
-    padding: 60px 0;
+    padding: 2.5rem 0;
   }
 
   .home-contact-top h2 {
@@ -1502,6 +1634,10 @@
   .home-contact-info-item-content {
     flex: 1;
   }
+  .home-contact-form-group input,
+.home-contact-form-group textarea {
+  font-size: 0.9rem;
+}
 }
 
 /* ---------- Fix for violet gap (empty space) ---------- */

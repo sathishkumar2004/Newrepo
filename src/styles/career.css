@@ -73,6 +73,7 @@
 
 
 /* ==================== Work With Us Section ==================== */
+
 .work-section {
   padding: 4rem 2rem;
   background-color: rgb(217, 217, 245);
@@ -184,7 +185,7 @@
   }
 
   .work-card {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
 
@@ -218,7 +219,12 @@
 }
 
 /* ==================== Career Openings ==================== */
+/* ==================== Career Openings Section ==================== */
 .career-openings-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   background-color: #f8fafc;
   padding: 4rem 2rem;
@@ -240,9 +246,11 @@
   background: #fff;
   padding: 2.5rem;
   max-width: 700px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .career-openings-icon {
@@ -278,6 +286,87 @@
   transform: translateY(-3px);
   background: linear-gradient(90deg, #673ab7, #512da8);
 }
+
+/* ==================== Responsive Design ==================== */
+
+/* Tablet View */
+@media (max-width: 900px) {
+  .career-openings-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .career-openings-card {
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+  }
+
+  .career-openings-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .career-openings-header p {
+    font-size: 1rem;
+  }
+
+  .career-openings-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .career-openings-card p {
+    font-size: 0.95rem;
+  }
+
+  .career-openings-icon {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .career-openings-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0.5rem;
+  }
+
+  .career-openings-card {
+    width: 100%;      
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .career-openings-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .career-openings-header p {
+    font-size: 0.95rem;
+  }
+
+  .career-openings-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .career-openings-card p {
+    font-size: 0.9rem;
+  }
+
+  .career-openings-btn {
+    width: 100%;
+    padding: 0.9rem 0;
+    border-radius: 6px;
+  }
+
+  .career-openings-icon {
+    font-size: 2rem;
+  }
+}
+
+
 
 /* ==================== Career Culture ==================== */
 

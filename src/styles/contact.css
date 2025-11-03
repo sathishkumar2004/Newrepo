@@ -220,4 +220,8 @@ textarea {
     max-width: 90%;
     margin: 0 auto;
   }
+  input,
+textarea {
+  font-size: 0.8rem;
+}
 }
